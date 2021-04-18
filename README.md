@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository implements a framework for evaluating different feature selection methods. We provide a baseline permutation importance [2] method in our pipeline (using implementation from sklearn) as well as implementations of two more recent methods:  Normalised Iterative Hard Thresholding [1] and Simultaneous Feature and Feature Group Selection through Hard Thresholding [3]. The pipeline allows to perform evaluation on both synthetic and real data.
+This repository implements a framework for evaluating different feature selection methods. We provide a baseline **permutation importance** [2] method in our pipeline (using implementation from sklearn) as well as implementations of two more recent methods:  **Normalised Iterative Hard Thresholding** [1] and **Simultaneous Feature and Feature Group Selection through Hard Thresholding** [3]. The pipeline allows to perform evaluation on both synthetic and real data.
 
 ## Baseline method
 
