@@ -24,7 +24,7 @@ This repository implements a framework for evaluating different feature selectio
 
 ## References
 
-[1]  T. Blumensath and M. E. Davies.  Normalized iterative hard thresholding:Guaranteed stability and performance.IEEE Journal of Selected Topics inSignal Processing, 4(2):298–309, 2010.[2]  Leo Breiman.  Random forests.Machine Learning, 45(1):5–32, 2001.2
+[1]  T. Blumensath and M. E. Davies.  Normalized iterative hard thresholding:Guaranteed stability and performance.IEEE Journal of Selected Topics inSignal Processing, 4(2):298–309, 2010.
 
 [2]  Leo Breiman.  Random forests.Machine Learning, 45(1):5–32, 2001.
 
