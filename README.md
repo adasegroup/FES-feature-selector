@@ -14,7 +14,7 @@ This repository implements a framework for evaluating different feature selectio
 
 The algorithm searches for ![\Large \hat{x}^{n+1}](https://latex.codecogs.com/gif.latex?\dpi{120}&space;\hat{x}^{n&plus;1}) starting from ![\Large \hat{x}^0 = 0](https://latex.codecogs.com/gif.latex?\dpi{120}&space;\hat{x}^0&space;=&space;0) by applying the iterative procedure below where ![\Large H_K()](https://latex.codecogs.com/gif.latex?\dpi{120}&space;H_K()) is a non-linear operator that sets all but the top-k largest elements by their magnitude to zero and ![\Large \mu](https://latex.codecogs.com/gif.latex?\dpi{120}&space;\mu) is computed adaptively as described in [1].
 
-![\Large \hat{x}^{n+1} = H_K(\hat{x}^n + \mu A^\top (y - A \hat{x}^n))](https://latex.codecogs.com/gif.latex?\dpi{300}&space;\hat{x}^{n&plus;1}&space;=&space;H_K(\hat{x}^n&space;&plus;&space;\mu&space;A^\top&space;(y&space;-&space;A&space;\hat{x}^n)))
+![\Large \hat{x}^{n+1} = H_K(\hat{x}^n + \mu A^\top (y - A \hat{x}^n))](https://latex.codecogs.com/gif.latex?\dpi{200}&space;\hat{x}^{n&plus;1}&space;=&space;H_K(\hat{x}^n&space;&plus;&space;\mu&space;A^\top&space;(y&space;-&space;A&space;\hat{x}^n)))
 
 ### Simultaneous Feature and Feature Group Selection through Hard Thresholding
 
