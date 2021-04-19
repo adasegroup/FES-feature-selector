@@ -12,6 +12,8 @@ This repository implements a framework for evaluating different feature selectio
 
 ### Normalised Iterative Hard Thresholding
 
+The algorithm searches for ![\Large \hat{x}^{n+1}](https://latex.codecogs.com/gif.latex?\hat{x}^{n&plus;1}) starting from $\hat{x}^0 = 0$  by applying the iterative procedure below where $H_K()$ is a non-linear operator that sets all but the top-k largest elements by their magnitude to zero and $\mu$ is computed adaptively as described in [1].
+
 ### Simultaneous Feature and Feature Group Selection through Hard Thresholding
 
 ## Evaluation protocol
