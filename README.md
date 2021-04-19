@@ -45,6 +45,8 @@ Cons:
 
 ### Real data
 
+## Team members roles
+
 ## References
 
 [1]  T. Blumensath and M. E. Davies.  Normalized iterative hard thresholding:Guaranteed stability and performance.IEEE Journal of Selected Topics inSignal Processing, 4(2):298–309, 2010.
