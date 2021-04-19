@@ -25,6 +25,18 @@ Cons:
 
 ### Simultaneous Feature and Feature Group Selection through Hard Thresholding
 
+The algorithm employs the iterative procedure below where ![\Large f](https://latex.codecogs.com/gif.latex?f) is the objective loss function, ![\Large L](https://latex.codecogs.com/gif.latex?L) is found by line search and ![\Large SGHT()](https://latex.codecogs.com/gif.latex?SGHT()) stands for Sparse Group Hard Thresholding that is solved by dynamic programming as described in [3].
+
+![\Large \hat{x}^{n+1} = SGHT(\hat{x}^n - \frac{1}{L} \nabla f(\hat{x}^n))](https://latex.codecogs.com/gif.latex?\dpi{150}&space;\hat{x}^{n&plus;1}&space;=&space;SGHT(\hat{x}^n&space;-&space;\frac{1}{L}&space;\nabla&space;f(\hat{x}^n)))
+
+Pros:
+* Line search on each iteration can be significantly sped up
+* Gives theoretical guarantees on convergence to a local minimum of the cost function that is at least within ![\Large c||y-Ax^*||_2](https://latex.codecogs.com/gif.latex?c||y-Ax^*||_2) radius from globally optimal solution ![\Large x^*](https://latex.codecogs.com/gif.latex?x^*) for a certain constant ![\Large c](https://latex.codecogs.com/gif.latex?c)
+
+
+Cons:
+* Theoretical guarantees on convergence exist only if ![\Large A](https://latex.codecogs.com/gif.latex?A) that satisfies restricted isometry property
+
 ## Evaluation protocol
 
 ### Metrics
