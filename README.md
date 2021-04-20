@@ -18,13 +18,13 @@ This method contains the following steps:
 
 Parameters can be described as follows [2]: 
 
-* estimator - Fitted estimator compatible with scorer;
-* X - Data on which permutation importance is compute;
-* y - Targets (in case of supervised) or Non (in case of unsupervised);
-* scoring - Scorer;
-* nrepeats - Number of feature permutation times;
+* estimator - Fitted estimator compatible with scorer
+* X - Data on which permutation importance is compute
+* y - Targets (in case of supervised) or Non (in case of unsupervised)
+* scoring - Scorer
+* nrepeats - Number of feature permutation times
 * njobs - Number of jobs for parallel run. Calculation is conducted by computing permutation score for each column, parallelized over the columns.
-* randomstate - Pseudo-random number generator to control the permutations of each feature;
+* randomstate - Pseudo-random number generator to control the permutations of each feature
 * sampleweight - Sample weights for scoring.
 
 In the returns, the mean of feature importance shows the degree of model performance accuracy deterioration with a random shuffling, and the standard deviation shows the variation of performance from one reshuffling to the next. Cases of negative values for permutation importances are possible, especially among small datasets; however, they merely depict the insufficiency of dataset, as they point out that "noisy" data happened to be more accurate than the real data, i.e. there is some random chance distortion. 
