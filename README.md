@@ -64,6 +64,10 @@ Cons:
 
 ### Metrics
 
+To evaluate performance of different methods we plan to employ the protocol from [3]. Namely, we're going to report the number of selected features, feature groups (for ISTA with SGHT [3]) and mean squared error.
+
+We also plan to study the influence of the noise on the performance of each method. Following [1] we aim to generate data with a certain signal-to-noise ratio (SNR) and compare the estimation of SNR compared to an oracle to which the noise values are known.
+
 ### Synthetic data
 
 Synthetic data used for examination of the proposed methods consists of both bi-level variable selection and group selection. The data set generation is conducted via the linear model with the noise term follow a normal distribution.  Ground truth is partitioned into 20 equally sized groups.  In this research, we intend to consider several kinds of grouping structure.
