@@ -74,6 +74,8 @@ We intend to study the algorithms on the Boston Housing data set.  The original 
 
 ## Team members roles
 
+In this research, we split responsibilities as follows:  Viacheslav Pronin will implement  the  Normalized  Iterative  Hard  Thresholding  method  and  study  the algorithms on the real data.  Konstantin Pakulev will apply the Simultaneous Feature and Feature Group Selection through Hard Thresholding method and focus on the examination of algorithms on the synthetic data.  Both researchers will work on the metrics section and provide the evaluation of methods’ accuracy, as well as conclusions and recommendations for further research.
+
 ## References
 
 [1]  T. Blumensath and M. E. Davies.  Normalized iterative hard thresholding:Guaranteed stability and performance.IEEE Journal of Selected Topics inSignal Processing, 4(2):298–309, 2010.
