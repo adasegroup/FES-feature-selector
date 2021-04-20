@@ -8,6 +8,16 @@ This repository implements a framework for evaluating different feature selectio
 
 ### Permutation importance
 
+Permutation importance is an approach to compute feature importances for anyblack-box estimator by measuring the decrease of a score when a feature is notavailable.  Permutation importance is calculated after a model has been fitted (i.e., the estimator is required to be a fitted estimator compatible with scorer).
+
+This method contains the following steps:
+
+* A baseline metric, defined by scoring, is evaluated on a data set defined by the X, where X can be the data set used to train the estimator or ahold-out set;
+* A feature column from the validation set is permuted and the metric is evaluated again;
+* The difference between the baseline metric and metric from permutating the feature column is the permutation importance. 
+
+
+
 ## Implemented methods
 
 ### Normalised Iterative Hard Thresholding
