@@ -16,7 +16,7 @@ This method contains the following steps:
 * A feature column from the validation set is permuted and the metric is evaluated again;
 * The difference between the baseline metric and metric from permutating the feature column is the permutation importance. 
 
-
+This method is most appropriate for computing feature importances with a reasonably limited number of columns (features), as it can be resource-intensive.
 
 ## Implemented methods
 
