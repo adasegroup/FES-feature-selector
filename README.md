@@ -66,7 +66,7 @@ Cons:
 
 To evaluate performance of different methods we plan to employ the protocol from [3]. Namely, we're going to report the number of selected features, feature groups (for ISTA with SGHT [3]) and mean squared error.
 
-We also plan to study the influence of the noise on the performance of each method. Following [1] we aim to generate data with a certain signal-to-noise ratio (SNR) and compare the estimation of SNR compared to an oracle to which the noise values are known.
+We also plan to study the influence of the noise on the performance of each method. Following [1] we aim to generate data with a certain signal-to-noise ratio (SNR) and compare the estimation of SNR to an oracle to which the noise values are known.
 
 ### Synthetic data
 
