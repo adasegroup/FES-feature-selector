@@ -66,7 +66,7 @@ Cons:
 
 ### Synthetic data
 
-Synthetic data used for examination of the proposed methods consists of both bi-level variable selection and group selection. The data set generation is conducted via the linear model with the noise term follow a normal distribution.  Ground truthxis partitioned into 20 equally sized groups.  In this research, we intend to consider several kinds of grouping structure.
+Synthetic data used for examination of the proposed methods consists of both bi-level variable selection and group selection. The data set generation is conducted via the linear model with the noise term follow a normal distribution.  Ground truth is partitioned into 20 equally sized groups.  In this research, we intend to consider several kinds of grouping structure.
 
 ### Real data
 
