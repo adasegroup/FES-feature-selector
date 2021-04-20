@@ -66,12 +66,11 @@ Cons:
 
 ### Synthetic data
 
-Synthetic data used for examination of the proposed methods consists of both bi-level variable selection and group selection. The data set generation is conducted3
-via the linear modely=Ax+, where the design matrixA∈R100×200and thenoise termfollow a normal distribution.  Ground truthxis partitioned into20 equally sized groups.  In this research, we intend to consider several kinds ofgrouping structure.  The goal is to obtain an accurate (in terms of least squares)estimator ofxthat preserves the grouping structure, given onlyAandy
+Synthetic data used for examination of the proposed methods consists of both bi-level variable selection and group selection. The data set generation is conducted via the linear model with the noise term follow a normal distribution.  Ground truthxis partitioned into 20 equally sized groups.  In this research, we intend to consider several kinds of grouping structure.
 
 ### Real data
 
-We intend to study the algorithms on the Boston Housing data set.  The originaldata set is used as a regression task, containing 506 samples with 13 features.Up to third-degree polynomial expansion is applied on each feature to accountfor the non-linear relationship between variables and response.  For each variablex,x2andx3are recorded and gathered in a group.  As a next step we split thedata into the training set (approximately 50%) and testing set.  The parametersettings for each method are properly scaled to fit the data set.  We intend to fita linear regression model on the training data and report the number of selectedfeatures, feature groups as well as the mean squared error (MSE) on the testingset
+We intend to study the algorithms on the Boston Housing data set.  The original data set is used as a regression task, containing 506 samples with 13 features. Up to third-degree polynomial expansion is applied on each feature to account for the non-linear relationship between variables and response.  For each variable x, x^2 and x^3 are recorded and gathered in a group.  As a next step we split the data into the training set (approximately 50%) and testing set.  The parameter settings for each method are properly scaled to fit the data set.  We intend to fita linear regression model on the training data and report the number of selected features, feature groups as well as the mean squared error (MSE) on the testing set.
 
 ## Team members roles
 
