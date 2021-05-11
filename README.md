@@ -6,31 +6,32 @@ This repository implements a framework for evaluating different feature selectio
 
 ## Usage
 
-### Prerequisites:
+### Prerequisites
 
 To reproduce results presented in the repository you have to make sure [Kedro](https://kedro.readthedocs.io/en/latest/02_get_started/02_install.html) is installed. 
 
 ### Reproducing evaluation results
 
-From the root of the project run the following command to reproduce **Test 1**
+From the root of the project run the following commands
+to reproduce **Test 1**:
 
 ```console
 kedro run
 ```
 
-To reproduce **Test 2**
+to reproduce **Test 2**:
 
 ```console
 kedro run --pipeline synth_poly_pi
 ```
 
-To reproduce **Test 3**
+to reproduce **Test 3**:
 
 ```console
 kedro run --pipeline synth_noise_pi
 ```
 
-To reproduce **Test 4**
+to reproduce **Test 4**:
 
 ```console
 kedro run --pipeline synth_rr_pi
