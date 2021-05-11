@@ -4,6 +4,38 @@
 
 This repository implements a framework for evaluating different feature selection methods. We provide a baseline **permutation importance** [2] method in our pipeline (using implementation from sklearn) as well as implementations of two more recent methods:  **Normalised Iterative Hard Thresholding** [1] and **Simultaneous Feature and Feature Group Selection through Hard Thresholding** [3]. The pipeline allows to perform evaluation on both synthetic and real data.
 
+## Usage
+
+### Prerequisites:
+
+To reproduce results presented in the repository you have to make sure [Kedro](https://kedro.readthedocs.io/en/latest/02_get_started/02_install.html) is installed. 
+
+### Reproducing evaluation results
+
+From the root of the project run the following command to reproduce **Test 1**
+
+```console
+kedro run
+```
+
+To reproduce **Test 2**
+
+```console
+kedro run --pipeline synth_poly_pi
+```
+
+To reproduce **Test 3**
+
+```console
+kedro run --pipeline synth_noise_pi
+```
+
+To reproduce **Test 4**
+
+```console
+kedro run --pipeline synth_rr_pi
+```
+
 ## Baseline method
 
 ### Permutation importance
