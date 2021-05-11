@@ -1,0 +1,5 @@
+evaluation:
+
+  perm_importance:
+    n_repeats: 30
+    explanation_rate: 0.95

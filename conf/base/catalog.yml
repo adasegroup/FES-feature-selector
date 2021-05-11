@@ -2,3 +2,53 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://kedro.readthedocs.io/en/stable/05_data/01_data_catalog.html
+
+_synth_base: &synth_base
+  type: fes.datasets.synthetic_dataset.SyntheticDataset
+
+  option: 'sparse'
+
+  n: 100
+  m: 200
+
+  noise_std: 1
+
+  redundancy_rate: 0.5
+  features_fill: 'normal'
+  poly_degree: 1
+
+  seed: 54
+
+sparse_synth_test_data:
+  <<: *synth_base
+
+sparse_synth_test_data_poly:
+  <<: *synth_base
+
+  poly_degree: 3
+
+sparse_synth_test_data_noise:
+  <<: *synth_base
+
+  noise_std: 6
+
+sparse_synth_test_data_rr:
+  <<: *synth_base
+
+  redundancy_rate: 0.75
+
+#grouped_synth_test_data:
+#  type: fes.datasets.synthetic_dataset.SyntheticDataset
+#
+#  option: 'grouped'
+#
+#  n: 100
+#  m: 200
+#
+#  noise_std: 1
+#
+#  redundancy_rate: 0.65
+#  features_fill: 'const'
+#
+#  num_groups: 20
+
