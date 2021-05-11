@@ -12,7 +12,7 @@ To reproduce results presented in the repository you have to make sure [Kedro](h
 
 ### Reproducing evaluation results
 
-From the root of the project run the following commands
+From the root of the project run the following commands in the terminal
 
 to reproduce **Test 1**:
 
