@@ -1,55 +1,16 @@
 from kedro.pipeline import Pipeline, node
 
-from .nodes import arrange_sparse_synth_test_data
+from .nodes import arrange_synth_test_data
 
-
-def sparse_synth_test_data_pipeline(**kwargs):
+#here now is only one pipeline for synthetic dataset creation, configured during the run or in the parameter file
+def synth_test_data_pipeline(**kwargs):
     return Pipeline(
         [
             node(
-                func=arrange_sparse_synth_test_data,
-                inputs="sparse_synth_test_data",
+                func=arrange_synth_test_data,
+                inputs="parameters",
                 outputs=["y", "X", "w", "y_true", "features_mask"],
-                name="arrange_sparse_synth_test_data_node",
-            ),
-        ]
-    )
-
-
-def sparse_synth_test_data_poly_pipeline(**kwargs):
-    return Pipeline(
-        [
-            node(
-                func=arrange_sparse_synth_test_data,
-                inputs="sparse_synth_test_data_poly",
-                outputs=["y", "X", "w", "y_true", "features_mask"],
-                name="arrange_sparse_synth_test_data_node",
-            ),
-        ]
-    )
-
-
-def sparse_synth_test_data_noise_pipeline(**kwargs):
-    return Pipeline(
-        [
-            node(
-                func=arrange_sparse_synth_test_data,
-                inputs="sparse_synth_test_data_noise",
-                outputs=["y", "X", "w", "y_true", "features_mask"],
-                name="arrange_sparse_synth_test_data_node",
-            ),
-        ]
-    )
-
-
-def sparse_synth_test_data_rr_pipeline(**kwargs):
-    return Pipeline(
-        [
-            node(
-                func=arrange_sparse_synth_test_data,
-                inputs="sparse_synth_test_data_rr",
-                outputs=["y", "X", "w", "y_true", "features_mask"],
-                name="arrange_sparse_synth_test_data_node",
+                name="sparse_synth_test_data_node",
             ),
         ]
     )

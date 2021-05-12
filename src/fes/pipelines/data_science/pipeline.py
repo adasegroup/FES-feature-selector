@@ -14,7 +14,15 @@ def perm_importance_pipeline(**kwargs):
             ),
             node(
                 func=evaluate_perm_importance,
-                inputs=["regressor", "y", "X", "w", "y_true", "features_mask", "parameters"],
+                inputs=[
+                    "regressor",
+                    "y",
+                    "X",
+                    "w",
+                    "y_true",
+                    "features_mask",
+                    "parameters",
+                ],
                 outputs=None,
                 name="evaluate_perm_importance_node",
             ),

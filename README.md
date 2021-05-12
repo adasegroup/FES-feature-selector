@@ -17,25 +17,25 @@ From the root of the project run the following commands in the terminal
 to reproduce **Test 1**:
 
 ```console
-kedro run
+kedro run 
 ```
 
 to reproduce **Test 2**:
 
 ```console
-kedro run --pipeline synth_poly_pi
+kedro run --params poly_degree:3
 ```
 
 to reproduce **Test 3**:
 
 ```console
-kedro run --pipeline synth_noise_pi
+kedro run --params noise_std:6
 ```
 
 to reproduce **Test 4**:
 
 ```console
-kedro run --pipeline synth_rr_pi
+kedro run --params redundancy_rate:0.75
 ```
 
 ## Baseline method

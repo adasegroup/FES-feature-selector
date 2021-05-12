@@ -41,15 +41,11 @@ def register_pipelines() -> Dict[str, Pipeline]:
     Returns:
         A mapping from a pipeline name to a ``Pipeline`` object.
     """
-    synth_dataset = dpp.sparse_synth_test_data_pipeline()
-    synth_dataset_poly = dpp.sparse_synth_test_data_poly_pipeline()
-    synth_dataset_noise = dpp.sparse_synth_test_data_noise_pipeline()
-    synth_dataset_rr = dpp.sparse_synth_test_data_rr_pipeline()
+    synth_dataset = dpp.synth_test_data_pipeline()
     perm_importance = dsp.perm_importance_pipeline()
 
     return {
-        "__default__": synth_dataset + perm_importance, # Test 1
-        "synth_poly_pi": synth_dataset_poly + perm_importance, # Test 2
-        "synth_noise_pi": synth_dataset_noise + perm_importance, # Test 3
-        "synth_rr_pi": synth_dataset_rr + perm_importance # Test 4
+        "__default__": synth_dataset + perm_importance,
+        "synth_perm_importance": synth_dataset
+        + perm_importance,  # this is currently the same as default, but in future could change with other methods added
     }
