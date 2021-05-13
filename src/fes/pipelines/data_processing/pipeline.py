@@ -1,3 +1,9 @@
+__all__ = ['sparse_synth_test_data_pipeline',
+           'sparse_synth_test_data_poly_pipeline',
+           'sparse_synth_test_data_noise_pipeline',
+           'sparse_synth_test_data_rr_pipeline',
+           ]
+
 from kedro.pipeline import Pipeline, node
 
 from .nodes import arrange_sparse_synth_test_data
