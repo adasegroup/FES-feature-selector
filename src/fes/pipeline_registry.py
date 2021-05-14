@@ -31,8 +31,8 @@ from typing import Dict
 
 from kedro.pipeline import Pipeline
 
-import fes.pipelines.data_processing.pipeline as dpp
-import fes.pipelines.data_science.pipeline as dsp
+from src.fes.pipelines.data_processing import *
+from src.fes.pipelines.data_science import perm_importance_pipeline
 
 
 def register_pipelines() -> Dict[str, Pipeline]:
@@ -41,15 +41,16 @@ def register_pipelines() -> Dict[str, Pipeline]:
     Returns:
         A mapping from a pipeline name to a ``Pipeline`` object.
     """
-    synth_dataset = dpp.sparse_synth_test_data_pipeline()
-    synth_dataset_poly = dpp.sparse_synth_test_data_poly_pipeline()
-    synth_dataset_noise = dpp.sparse_synth_test_data_noise_pipeline()
-    synth_dataset_rr = dpp.sparse_synth_test_data_rr_pipeline()
-    perm_importance = dsp.perm_importance_pipeline()
+
+    synth_dataset = sparse_synth_test_data_pipeline()
+    synth_dataset_poly = sparse_synth_test_data_poly_pipeline()
+    synth_dataset_noise = sparse_synth_test_data_noise_pipeline()
+    synth_dataset_rr = sparse_synth_test_data_rr_pipeline()
+    perm_importance = perm_importance_pipeline()
 
     return {
-        "__default__": synth_dataset + perm_importance, # Test 1
-        "synth_poly_pi": synth_dataset_poly + perm_importance, # Test 2
-        "synth_noise_pi": synth_dataset_noise + perm_importance, # Test 3
-        "synth_rr_pi": synth_dataset_rr + perm_importance # Test 4
+        "__default__": synth_dataset + perm_importance,  # Test 1
+        "synth_poly_pi": synth_dataset_poly + perm_importance,  # Test 2
+        "synth_noise_pi": synth_dataset_noise + perm_importance,  # Test 3
+        "synth_rr_pi": synth_dataset_rr + perm_importance  # Test 4
     }

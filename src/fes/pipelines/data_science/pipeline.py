@@ -1,3 +1,5 @@
+__all__ = ['perm_importance_pipeline']
+
 from kedro.pipeline import Pipeline, node
 
 from .nodes import fit_model, evaluate_perm_importance

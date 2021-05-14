@@ -1,17 +1,18 @@
 import numpy as np
+from sklearn.base import RegressorMixin
 
 from sklearn.linear_model import LinearRegression
 from sklearn.inspection import permutation_importance
 from sklearn.metrics import mean_squared_error, r2_score
 
 
-def fit_model(y, X):
+def fit_model(y: np.ndarray, X: np.ndarray) -> LinearRegression:
     """
     Parameters
     ----------
     y: (n,1) vector of observations
     X: (n,m) design matrix
-    Returns regressor: fitted regressor compatible with sklearn interface
+    Returns linear regressor: fitted regressor compatible with sklearn interface
     -------
 
     """
@@ -20,7 +21,8 @@ def fit_model(y, X):
     return regressor
 
 
-def evaluate_perm_importance(regressor, y, X, w, y_true, features_mask, parameters):
+def evaluate_perm_importance(regressor: RegressorMixin, y: np.ndarray, X: np.ndarray, w: np.ndarray,
+                             y_true: np.ndarray, features_mask: np.ndarray, parameters: dict):
     """
     Parameters
     ----------
