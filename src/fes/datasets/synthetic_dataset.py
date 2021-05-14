@@ -1,4 +1,5 @@
 from typing import Dict, Any
+from utils import calculate_snr
 
 import numpy as np
 from numpy import random
@@ -146,12 +147,3 @@ def generate_grouped_data(n, m, noise_std, redundancy_rate, features_fill, num_g
     y = y_true + np.random.standard_normal((n)) * noise_std
 
     return y, X, w, y_true, features_mask, groups_labels
-
-
-"""
-Support utils
-"""
-
-
-def calculate_snr(y_true, noise_std):
-    return (20 * np.log10(abs(np.where(noise_std == 0, 0, y_true / noise_std)))).mean()

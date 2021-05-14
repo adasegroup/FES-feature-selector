@@ -5,6 +5,19 @@ from sklearn.inspection import permutation_importance
 from sklearn.metrics import mean_squared_error, r2_score
 
 
+# Tool to check dimensionality
+def assert_shapes(x, x_shape, y, y_shape):
+    assert_shape(x, x_shape)
+    assert_shape(y, y_shape)
+    
+    shapes = defaultdict(set)
+    for arr, shape in [(x, x_shape), (y, y_shape)]:
+        for i, char in enumerate(shape):
+            if isinstance(char, str):
+                shapes[char].add(arr.shape[i])
+    for _, _set in shapes.items():
+        assert len(_set) == 1, (x, x_shape, y, y_shape)
+
 def fit_model(y, X):
     """
     Parameters
@@ -79,3 +92,4 @@ def evaluate_perm_importance(regressor, y, X, w, y_true, features_mask, paramete
 
     print(f"Approximation with {pi_parameters['explanation_rate']} explanation rate:")
     print(f"Number of proposed features: {len(features_hat_idx)}, {er_mse:.3f} MSE, {er_r2:.3f} R2", end='\n\n')
+    
