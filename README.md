@@ -17,8 +17,8 @@ From the root of the project run the following commands in the terminal
 to reproduce **Test 1**:
 
 ```console
-$ kedro run --pipeline synth_pi
-$ kedro run --pipeline synth_iht 
+kedro run --pipeline synth_pi
+kedro run --pipeline synth_iht 
 ```
 
 to reproduce **Test 2**:
