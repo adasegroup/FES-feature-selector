@@ -1,5 +1,30 @@
-evaluation:
+#define the names of parameters for each function
+#nested parameters are not supported currently to be set with terminal, so this is a possble workaround
 
+synthetic_data_params_list:
+  - 'option'
+  - 'n'
+  - 'm'
+  - 'noise_std'
+  - 'redundancy_rate'
+  - 'features_fill'
+  - 'poly_degree'
+  - 'seed'
+
+evaluation_params_list:
   perm_importance:
-    n_repeats: 30
-    explanation_rate: 0.95
+    - 'n_repeats'
+    - 'explanation_rate'
+
+#the parameter section itself
+option: 'sparse'
+n: 100
+m: 200
+noise_std: 1
+redundancy_rate: 0.5
+features_fill: 'normal'
+poly_degree: 1
+seed: 54
+
+n_repeats: 30
+explanation_rate: 0.95
