@@ -228,6 +228,10 @@ def run(
 
     package_name = str(Path(__file__).resolve().parent.name)
 
+    import importlib
+
+    importlib.import_module(f"{package_name}.pipeline_registry")
+
     with KedroSession.create(package_name, env=env, extra_params=params) as session:
         session.run(
             tags=tag,

@@ -3,5 +3,5 @@
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://kedro.readthedocs.io/en/stable/05_data/01_data_catalog.html
 
-synth_test_data: &synth_base
+synth_test_data:
   type: fes.datasets.synthetic_dataset.SyntheticDataset

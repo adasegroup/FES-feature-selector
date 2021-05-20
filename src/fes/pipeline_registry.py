@@ -43,9 +43,10 @@ def register_pipelines() -> Dict[str, Pipeline]:
     """
     synth_dataset = dpp.synth_test_data_pipeline()
     perm_importance = dsp.perm_importance_pipeline()
+    iht_importance = dsp.iht_pipeline()
 
     return {
         "__default__": synth_dataset + perm_importance,
-        "synth_perm_importance": synth_dataset
-        + perm_importance,  # this is currently the same as default, but in future could change with other methods added
+        "synth_pi": synth_dataset + perm_importance,
+        "synth_iht": synth_dataset + iht_importance
     }

@@ -5,10 +5,16 @@ from numpy import random
 def arrange_synth_test_data(parameters):
     parameters = {k: parameters[k] for k in parameters["synthetic_data_params_list"]}
     option = parameters.pop('option')
+
     if option == 'sparse':
         y, X, w, y_true, features_mask = generate_sparse_data(**parameters)
-    elif option == 'grouped':
-        y, X, w, y_true, features_mask = generate_grouped_data(**parameters)
+
+    # elif option == 'grouped':
+    #     y, X, w, y_true, features_mask = generate_grouped_data(**parameters)
+
+    else:
+        raise NotImplementedError
+
     return y, X, w, y_true, features_mask
 
 
@@ -24,21 +30,18 @@ def generate_sparse_data(n, m, noise_std, redundancy_rate, features_fill, poly_d
     if seed is not None:
         print(f"The seed for the synthetic dataset generation is set to {seed}", end='\n\n')
         random.seed(seed)
+
     w = np.zeros((m, 1))
 
     # Decide the number of features and their locations
-    num_sparse_feat = np.clip(
-        random.binomial(m, 1 - redundancy_rate), a_min=1, a_max=None
-    )
+    num_sparse_feat = np.clip(random.binomial(m, 1 - redundancy_rate), a_min=1, a_max=None)
 
     sparse_feat_idx = random.choice(m, num_sparse_feat, replace=False)
 
     # Trim idx to poly_degree
     if poly_degree is not None:
         num_poly = num_sparse_feat // poly_degree
-        sparse_feat_idx = sparse_feat_idx[: num_poly * poly_degree].reshape(
-            num_poly, poly_degree
-        )
+        sparse_feat_idx = sparse_feat_idx[: num_poly * poly_degree].reshape(num_poly, poly_degree)
 
     # Fill features with values
     if features_fill == "const":
@@ -50,9 +53,7 @@ def generate_sparse_data(n, m, noise_std, redundancy_rate, features_fill, poly_d
                 w[sparse_feat_idx[:, i]] = random.standard_normal((num_poly, 1))
 
             else:
-                w[sparse_feat_idx[:, i]] = (
-                    w[sparse_feat_idx[:, i - 1]] * w[sparse_feat_idx[:, 0]]
-                )
+                w[sparse_feat_idx[:, i]] = w[sparse_feat_idx[:, i - 1]] * w[sparse_feat_idx[:, 0]]
 
     else:
         raise ValueError(f"Unknown fill value: {features_fill}")
@@ -66,9 +67,7 @@ def generate_sparse_data(n, m, noise_std, redundancy_rate, features_fill, poly_d
     y = y_true + np.random.standard_normal((n, 1)) * noise_std
 
     print("Synthetic sparse test dataset is generated")
-    print(
-        f"Number of observations: {n}, features dim. {m}, number of informative features {sum(features_mask.reshape(-1))}"
-    )
+    print(f"Number of observations: {n}, features dim. {m}, number of informative features {sum(features_mask.reshape(-1))}")
     print(f"Observations SNR: {calculate_snr(y_true, noise_std):.3f} dB")
     print(f"Features fill: {features_fill}", end="\n\n")
 
@@ -125,5 +124,3 @@ Support utils
 
 def calculate_snr(y_true, noise_std):
     return (20 * np.log10(abs(np.where(noise_std == 0, 0, y_true / noise_std)))).mean()
-
-# TODO. Grouped data
