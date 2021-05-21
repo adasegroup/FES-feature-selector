@@ -42,6 +42,10 @@ kedro run --pipeline synth_pi --params redundancy_rate:0.75
 kedro run --pipeline synth_iht --params redundancy_rate:0.75
 ```
 
+## Evaluation results
+
+![Alt text](reports/eval_results.png?raw=true)
+
 ## Baseline method
 
 ### Permutation importance
