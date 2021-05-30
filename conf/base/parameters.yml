@@ -22,22 +22,35 @@ evaluation_params_list:
     - 'verbose'
 
 
-# The parameter section itself
-# Dataset params
+# Whether to test on sparse features selection or on sparse group selection
 option: 'sparse'
+# Number of observations to generate
 n: 100
+# Number of parameters of the model
 m: 200
+# The noise level
 noise_std: 1
+# The rate of the informative features
 redundancy_rate: 0.5
+# What values to fill features with: 'normal' - from normal distribution, 'const' - with constants
 features_fill: 'normal'
+# Th degree of polynomial dependencies between features
 poly_degree: 1
+# Seed for reproducing the results
 seed: 54
 
+# Explanation rate of the model. Used to determine the proposed number of informative features
 explanation_rate: 0.95
 
+# Permutation Importance parameters
+# The number of time to repeat permutation
 n_repeats: 30
 
+# The number of features to select
 k: 150
+# Tolerance threshold for the termination
 tol: 0.001
+# The maximum number of iterations for IHT
 max_iter: 1000
+# Whether to provide output during IHT run
 verbose: False
